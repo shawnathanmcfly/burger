@@ -1,16 +1,16 @@
-require('connection')(con);
+
 
 var orm = {
 
-    selectAll = () => {
+    selectAll: () => {
 
     },
 
-    insertOne = () => {
+    insertOne: () => {
 
     },
 
-    updateOne = () => {
+    updateOne: () => {
 
     }
 }

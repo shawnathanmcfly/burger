@@ -1,1 +1,1 @@
-require('../config/orm')(orm);
+var orm = require('../config/orm');
