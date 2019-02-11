@@ -1,1 +1,40 @@
-<h1>HEEDSDSDDSD</h1>
+<div class="container">
+    <div class="row">
+        <div id="burgerz" class="col-3 bg-primary">
+            <h2>EAT IT</h2>
+            {{#each burger}}
+                {{#if this.ate}}
+                    
+                {{else}}
+                    <div pos="{{this.id}}" class="borger bg-light rounded p-1 mt-1 mb-1">
+                        <h6>{{this.burger}}</h6> <button id="{{this.id}}" class="eat">eat</button>
+                    </div>
+                {{/if}}
+            {{/each}}
+        </div>
+        <div class="col-6 bg-success">
+            <img src="img/borger.jpg" width="400" height="300" />
+            <form id="b-form">
+                <label for="name">Name</label>
+                <input type="text" name="name">
+                <input type="submit" value="submit">
+            </form>
+        </div>
+        <div id="ateit" class="col-3 bg-success">
+            <h2>ATE IT</h2>
+            {{#each burger}}
+                {{#if this.ate}}
+                    <div pos="{{this.id}}" class="borger bg-light rounded p-1 mt-1 mb-1">
+                        <h6>{{this.burger}}</h6>
+                    </div>
+                {{else}}
+                    
+                {{/if}}
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+
+
+

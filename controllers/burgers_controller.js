@@ -1,16 +1,30 @@
-var burger = require('../models/burger');
-var hb = require("express-handlebars");
+var express = require("express");
+var routes = express.Router();
 
+var burger = require("../models/model.js");
 
-module.exports = (app) => {
+routes.get('/', (req, res) => {
 
-    app.engine("handlebars", hb({ defaultLayout: "main" }));
-    app.set("view engine", "handlebars");
+    burger.module.all( data => {
 
-    app.get('/', (req, res) => {
+        res.render('index', { burger: data });
+    })
+        
+});
 
-        res.render('index');
+routes.post('/', (req, res) => {
+    burger.module.one( req.body.data, dat => {
+        
+        res.send( req.body.data );
         
     })
 
-}
+});
+
+routes.put('/', (req, res) => {
+    burger.module.up( req.body.data, dat => {
+        res.send( req.body.data );
+    })
+});
+
+module.exports = routes;
