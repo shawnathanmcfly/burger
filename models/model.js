@@ -10,6 +10,7 @@ exports.module = {
 
     one: (dat, cb) => {
         orm.insertOne( dat, res => {
+            
             cb(res);
         })
     },

@@ -10,6 +10,7 @@ var orm = {
         let q = 'INSERT INTO burgers (burger) VALUES ("' + d +'");';
         con.query(q, d ,(err, result) => {
             if(err) throw err;
+            
             cb(result);
         });
     },

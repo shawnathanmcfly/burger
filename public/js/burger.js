@@ -8,18 +8,18 @@ $( function() {
                 data:  $("#b-form input[name=name]").val()
             },
             result => {
-                
+                console.log(result.id);
                 $("#burgerz").append(
-                    '<div class="bg-light rounded p-1 mt-1 mb-1">' +
-                        '<h6>' + result + '</h6>' +
-                        '<button class="eat">eat</button>' +
+                    '<div pos="' + result.id + '" class="borger bg-light rounded p-1 mt-1 mb-1">' +
+                        '<h6>' + result.data + '</h6>' +
+                        '<button id="'+ result.id +'" class="eat">eat</button>' +
                     '</div>'
                 );
                 
         });
     });
 
-    $("#burgerz").find(".eat").click(function () {
+    $("#burgerz").on( "click", ".eat" ,function () {
         $.ajax({
             url:'/',
             type:'PUT',
